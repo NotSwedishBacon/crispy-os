@@ -6,7 +6,7 @@ name: crispy-os
 description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/blue-build/base-images/fedora-silverblue
+base-image: ghcr.io/ublue-os/silverblue-main
 image-version: latest # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -30,7 +30,6 @@ modules:
         - starship
         - antigravity
         - gh
-        - distrobox
         - gnome-tweaks
         - fastfetch
     remove:
@@ -40,7 +39,6 @@ modules:
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
         - gnome-software
-        - gnome-software-rpm-ostree
 
   - type: default-flatpaks
     configurations:
@@ -51,7 +49,6 @@ modules:
           - org.mozilla.firefox
           - com.github.tchx84.Flatseal
           - com.prusa3d.PrusaSlicer
-          - com.ranfdev.DistroShelf
           - io.github.flattool.Warehouse
           - it.mijorus.gearlever
           - org.gimp.GIMP
@@ -62,6 +59,7 @@ modules:
           - com.discordapp.Discord
           - io.github.kolunmi.Bazaar
           - io.github.shiftey.Desktop
+          - com.mattjakeman.ExtensionManager
       - notify: false
         scope: user # Also add Flathub user repo, but no user packages
 
