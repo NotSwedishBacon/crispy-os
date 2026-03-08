@@ -32,6 +32,7 @@ modules:
         - gh
         - gnome-tweaks
         - fastfetch
+        - kitty
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
@@ -39,6 +40,7 @@ modules:
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
         - gnome-software
+        - ptyxis
 
   - type: default-flatpaks
     configurations:
@@ -77,15 +79,6 @@ modules:
     kargs:
       - "i915.enable_guc=2"
       - "i915.enable_fbc=1"
-
-  - type: brew
-    nofile-limits: true # increase nofile limits
-    brew-analytics: false # disable telemetry
-    auto-update: true # auto update brew packages
-    update-interval: 1d # update interval in days
-    auto-upgrade: true # auto upgrade brew packages
-    upgrade-interval: 1d # upgrade interval in days
-    update-wait-after-boot: 1h # wait 1 hour after boot before updating
     
   - type: initramfs 
   
