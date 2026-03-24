@@ -22,11 +22,14 @@ modules:
       files:
         - antigravity.repo
         - https://cli.github.com/packages/rpm/gh-cli.repo
+      copr: 
+        - ligenix/cosmic-ext
     install:
       packages:
         - antigravity
         - gh
         - fastfetch
+        - cosmic-ext-applet-clipboard-manager
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
