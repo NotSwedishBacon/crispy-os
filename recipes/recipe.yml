@@ -34,9 +34,6 @@ modules:
         # "firefox" is the main package, "firefox-langpacks" is a dependency
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
-        - gnome-software
-        - htop
-        - nvtop 
 
   - type: default-flatpaks
     configurations:
@@ -44,20 +41,11 @@ modules:
         scope: system
         # If no repo information is specified, Flathub will be used by default
         install: # system flatpaks we want all users to have and not remove
-          - org.mozilla.firefox
+          - com.google.Chrome
           - com.github.tchx84.Flatseal
-          - com.prusa3d.PrusaSlicer
           - io.github.flattool.Warehouse
           - it.mijorus.gearlever
-          - org.gimp.GIMP
-          - org.inkscape.Inkscape
-          - org.libreoffice.LibreOffice
-          - org.telegram.desktop
-          - com.discordapp.Discord
-          - io.github.kolunmi.Bazaar
-          - io.github.shiftey.Desktop
           - com.mattjakeman.ExtensionManager
-          - org.gimp.GIMP
           - org.gnome.Calculator
           - org.gnome.Calendar
           - org.gnome.Characters
@@ -74,6 +62,14 @@ modules:
           - org.gnome.font-viewer 
       - notify: false
         scope: user # Also add Flathub user repo, but no user packages
+        install:
+          - com.prusa3d.PrusaSlicer
+          - org.gimp.GIMP
+          - org.inkscape.Inkscape
+          - org.libreoffice.LibreOffice
+          - org.telegram.desktop
+          - com.discordapp.Discord
+          - io.github.shiftey.Desktop
   
   - type: gnome-extensions
     install:
