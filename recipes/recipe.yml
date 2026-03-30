@@ -75,6 +75,7 @@ modules:
     install:
       - Blur my Shell 
       - AppIndicator and KStatusNotifierItem Support
+      - Dash to Panel
 
   - type: fonts
     fonts:
