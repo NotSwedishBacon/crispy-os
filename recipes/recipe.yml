@@ -6,7 +6,7 @@ name: hamora
 description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/kinoite-main
+base-image: ghcr.io/ublue-os/silverblue-main
 image-version: latest # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -22,28 +22,11 @@ modules:
       files:
         - antigravity.repo
         - https://cli.github.com/packages/rpm/gh-cli.repo
-        - chrome.repo
-        - mwt-packages.repo
-      nonfree: rpmfusion
     install:
       packages:
         - antigravity
         - gh
         - fastfetch
-        - google-chrome-stable
-        - prusa-slicer
-        - gimp
-        - inkscape
-        - libreoffice
-        - discord
-        - telegram-desktop 
-        - github-desktop 
-        - okular
-        - gwenview 
-        - haruna 
-        - kcalc
-        - krita 
-        - thunderbird
         
     remove:
       packages:
@@ -58,7 +41,39 @@ modules:
         scope: system
         # If no repo information is specified, Flathub will be used by default
         install: # system flatpaks we want all users to have and not remove
-          - it.mijorus.gearlever
+          - com.discordapp.Discord         
+          - com.github.tchx84.Flatseal     
+          - com.google.Chrome              
+          - com.prusa3d.PrusaSlicer        
+          - com.spotify.Client             
+          - io.github.flattool.Warehouse   
+          - io.github.getnf.embellish      
+          - io.github.shiftey.Desktop      
+          - io.missioncenter.MissionCenter 
+          - io.podman_desktop.PodmanDesktop
+          - it.mijorus.gearlever           
+          - me.iepure.devtoolbox           
+          - org.gimp.GIMP                  
+          - org.gnome.Loupe                
+          - org.gnome.Showtime             
+          - org.gnome.Calculator           
+          - org.gnome.clocks               
+          - org.gnome.Contacts             
+          - org.gnome.Weather              
+          - org.gnome.Papers               
+          - org.gnome.SimpleScan           
+          - org.libreoffice.LibreOffice    
+          - org.mozilla.Thunderbird        
+          - org.telegram.desktop  
+          - org.gnome.Calendar
+          - org.gnome.Extensions
+          - org.gnome.TextEditor
+          - org.gnome.Snapshot
+          - org.gnome.Maps
+          - org.gnome.font-viewer
+          - org.gnome.Logs
+          - org.gnome.Characters
+
 
   - type: fonts
     fonts:
